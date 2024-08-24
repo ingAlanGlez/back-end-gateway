@@ -4,9 +4,12 @@ server:
 ## Classic Eureka configuration
 eureka:
   instance:
-    preferIpAddress: true
     hostname: ${HOSTNAME:localhost}
-    
+    preferIpAddress: false
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    non-secure-port: 80
+    secure-port: 443
   client:
     registerWithEureka: true
     fetchRegistry: true
