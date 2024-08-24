@@ -46,8 +46,7 @@ spring:
 management:
   endpoint:
     gateway:  
-      # enabled: ${ROUTE_TABLES_ENABLED:true}
-      enabled: true
+      enabled: ${ROUTE_TABLES_ENABLED:true}
   endpoints:
     web:
       exposure:
