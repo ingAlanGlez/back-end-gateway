@@ -6,6 +6,7 @@ eureka:
   instance:
     preferIpAddress: true
     hostname: ${HOSTNAME:localhost}
+    instance-id: ${spring.application.name}:${random.uuid}
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -19,7 +20,15 @@ spring:
   application:
     name: gateway    
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     gateway:
+      routes:
+      - id: ms-products
+        uri: lb://MS-PRODUCTS
+        predicates:
+        - Path=/ms-products/**
       discovery:
         locator:
           enabled: true
