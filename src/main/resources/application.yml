@@ -4,8 +4,8 @@ server:
 ## Classic Eureka configuration
 eureka:
   instance:
-    hostname: ${HOSTNAME:localhost}
     preferIpAddress: true
+    hostname: ${HOSTNAME:localhost}
   client:
     registerWithEureka: true
     fetchRegistry: true
