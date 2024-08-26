@@ -4,7 +4,7 @@ server:
 ## Classic Eureka configuration
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: false
     hostname: ${HOSTNAME:localhost}
   client:
     registerWithEureka: true
